@@ -71,22 +71,27 @@ Kemudian kita tampilkan data top 5
 ```
 df.head()
 ```
-![](Data top 5.png)
+![](Data.png)
 ```
 Kemudian kita tampilkan info ringkas data frame
+```
 df.info()
 ```
 Kemudian kita tampilkan statistik deskriptif ringkas tentang kolom-kolom numerik dalam DataFrame. Statistik yang dihasilkan mencakup count (jumlah data non-null), mean (rata-rata), std (standar deviasi), min (nilai minimum), 25% (kuartil pertama), 50% (median atau kuartil kedua), 75% (kuartil ketiga), dan max (nilai maksimum).
+```
 df.describe()
 ```
 Kemudian kita tranposisikan data agar lebih mudah melihat hasil dari statistik nya
+```
 df.describe().T
 ```
 Kemudian kita tampilkan kolom dan baris pada data
+```
 df.shape
 ```
 
 Kemudian kita menghitung jumlah nilai null (NaN atau missing values) di setiap kolom dari DataFrame. Ini memberikan informasi tentang seberapa banyak data yang hilang dalam setiap kolom.
+```
 df.isnull().sum()
 ```
 
