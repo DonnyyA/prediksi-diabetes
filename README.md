@@ -70,7 +70,7 @@ df = pd.read_csv('/content/healthcare-diabetes/health care diabetes.csv')
 Kemudian kita tampilkan data top 5 
 df.head()
 ```
-![.] (Screenshot 2024-01-01 214609.png)
+![](Data top 5.png)
 Kemudian kita tampilkan info ringkas data frame
 df.info()
 ```
