@@ -68,6 +68,7 @@ df = pd.read_csv('/content/healthcare-diabetes/health care diabetes.csv')
 ```
 
 Kemudian kita tampilkan data top 5 
+```
 df.head()
 ```
 ![](Data top 5.png)
