@@ -193,4 +193,4 @@ dan di dapat accuracy 0.72
 ```
 
 ## Deployment
-
+https://prediksi-diabetes-uas.streamlit.app/
