@@ -73,6 +73,7 @@ df.head()
 ```
 ![](1.png)
 ```
+
 Kemudian kita tampilkan info ringkas data frame
 ```
 df.info()
