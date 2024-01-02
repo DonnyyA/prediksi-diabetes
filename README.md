@@ -71,7 +71,7 @@ Kemudian kita tampilkan data top 5
 ```
 df.head()
 ```
-![](Data.png)
+![](1.png)
 ```
 Kemudian kita tampilkan info ringkas data frame
 ```
