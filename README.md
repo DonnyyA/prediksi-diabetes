@@ -83,7 +83,7 @@ Kemudian kita tampilkan statistik deskriptif ringkas tentang kolom-kolom numerik
 df.describe()
 ```
 Kemudian kita tranposisikan data agar lebih mudah melihat hasil dari statistik nya
-
+```
 df.describe().T
 ```
 Kemudian kita tampilkan kolom dan baris pada data
