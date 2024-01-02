@@ -82,6 +82,8 @@ Kemudian kita tampilkan statistik deskriptif ringkas tentang kolom-kolom numerik
 ```
 df.describe()
 ```
+![](7.png)
+
 Kemudian kita tranposisikan data agar lebih mudah melihat hasil dari statistik nya
 ```
 df.describe().T
@@ -105,6 +107,10 @@ Kemudian kita membuat grafik histogram untuk mengetahui sebaran data dari setiap
 ```
 p = df.hist(figsize = (20,20))
 ```
+![](2.png)
+![](3.png)
+![](4.png)
+
 
 Kemudian kita membuat metrik relasi yang bertujuan untuk melihat hubungan antar variable
 ```
@@ -114,6 +120,7 @@ sns.heatmap(correlation_matrix, annot=True, cmap='coolwarm', fmt=".2f")
 plt.title('Correlation Matrix')
 plt.show()
 ```
+![](5.png)
 
 Kemudian kita membuat count plot dari tipe data dalam DataFrame menggunakan Seaborn (sns). Ini membantu kita memahami distribusi tipe data di seluruh kolom DataFrame. 
 ```
@@ -215,6 +222,7 @@ print(classification_report(y_test,y_pred))
 
 dan di dapat accuracy 0.72
 ```
+![](6.png)
 
 ## Deployment
 https://prediksi-diabetes-uas.streamlit.app/
