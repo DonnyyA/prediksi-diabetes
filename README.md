@@ -87,7 +87,7 @@ Kemudian kita tranposisikan data agar lebih mudah melihat hasil dari statistik n
 df.describe().T
 ```
 Kemudian kita tampilkan kolom dan baris pada data
-
+```
 df.shape
 ```
 
@@ -97,14 +97,17 @@ df.isnull().sum()
 ```
 
 Kemudian kita menghitung jumlah nilai null (NaN atau missing values) di setiap kolom DataFrame. Metode ini memberikan informasi tentang seberapa banyak data yang hilang dalam setiap kolom.
+```
 df['Outcome'].value_counts()
 ```
 
 Kemudian kita membuat grafik histogram untuk mengetahui sebaran data dari setiap variable
+```
 p = df.hist(figsize = (20,20))
 ```
 
 Kemudian kita membuat metrik relasi yang bertujuan untuk melihat hubungan antar variable
+```
 correlation_matrix = df.corr()
 plt.figure(figsize=(12, 10))
 sns.heatmap(correlation_matrix, annot=True, cmap='coolwarm', fmt=".2f")
@@ -113,6 +116,7 @@ plt.show()
 ```
 
 Kemudian kita membuat count plot dari tipe data dalam DataFrame menggunakan Seaborn (sns). Ini membantu kita memahami distribusi tipe data di seluruh kolom DataFrame. 
+```
 sns.countplot(y=df.dtypes ,data=df)
 plt.xlabel("count of each data type")
 plt.ylabel("data types")
@@ -124,6 +128,7 @@ p=msno.bar(df)
 ```
 
 Kemudian kita membuat diagram batang (bar plot) dengan menggunakan library pandas untuk DataFrame df dengan memberi warna dan menjelaskan sebaran data nya
+```
 color_wheel = {1: "#0392cf",
                2: "#7bc043"}
 colors = df["Outcome"].map(lambda x: color_wheel.get(x + 1))
@@ -132,7 +137,8 @@ p=df.Outcome.value_counts().plot(kind="bar")
 ```
 
 ## Processing
-Kita melakukan penskalaan standar (standard scaling) pada fitur-fitur dalam DataFrame df. Ini dilakukan dengan menggunakan StandardScaler dari scikit-learn. 
+Kita melakukan penskalaan standar (standard scaling) pada fitur-fitur dalam DataFrame df. Ini dilakukan dengan menggunakan StandardScaler dari scikit-learn.
+```
 from sklearn.preprocessing import StandardScaler
 sc_X = StandardScaler()
 X =  pd.DataFrame(sc_X.fit_transform(df.drop(["Outcome"],axis = 1),),
@@ -141,16 +147,19 @@ X =  pd.DataFrame(sc_X.fit_transform(df.drop(["Outcome"],axis = 1),),
 ```
 
 kemudian mencoba kembali untuk melihat beberapa baris pertama dari DataFrame X. Fungsi head() digunakan untuk menampilkan beberapa baris teratas dari DataFrame.
+```
 X.head()
 ```
 
 ## Modeling
-Kita menggunakan train_test_split dari scikit-learn untuk membagi dataset menjadi set pelatihan dan pengujian. 
+Kita menggunakan train_test_split dari scikit-learn untuk membagi dataset menjadi set pelatihan dan pengujian.
+```
 from sklearn.model_selection import train_test_split
 X_train,X_test,y_train,y_test = train_test_split(X,y,test_size=1/3,random_state=42, stratify=y)
 ```
 
 Kemudian kita gunakan untuk melatih model K-Nearest Neighbors (KNN) dengan berbagai nilai k dan mengumpulkan skor pelatihan dan pengujian untuk masing-masing nilai k
+```
 from sklearn.neighbors import KNeighborsClassifier
 
 
@@ -167,12 +176,14 @@ for i in range(1,15):
     ```
 
     Kemudian kita gunakan untuk menemukan nilai k yang memberikan skor pelatihan tertinggi.
+    ```
     max_train_score = max(train_scores)
 train_scores_ind = [i for i, v in enumerate(train_scores) if v == max_train_score]
 print('Max train score {} % and k = {}'.format(max_train_score*100,list(map(lambda x: x+1, train_scores_ind))))
 ```
 
 Kemudian kita mencari nilai k yang memberikan skor pengujian tertinggi.
+```
 max_test_score = max(test_scores)
 test_scores_ind = [i for i, v in enumerate(test_scores) if v == max_test_score]
 print('Max test score {} % and k = {}'.format(max_test_score*100,list(map(lambda x: x+1, test_scores_ind))))
@@ -180,13 +191,15 @@ print('Max test score {} % and k = {}'.format(max_test_score*100,list(map(lambda
 
 ## Evaluasi
 Kemudian kita membuat model K-Nearest Neighbors (KNN) dengan menggunakan nilai k yang diberikan (dalam kasus ini, k=1), melatihnya dengan data pelatihan, dan menghitung skor pada data pengujian
+```
 knn = KNeighborsClassifier(1)
 
 knn.fit(X_train,y_train)
 knn.score(X_test,y_test)
 ```
 
-Kemudian kita membuat confusion matrix dan menampilkannya sebagai heatmap dengan menggunakan Seaborn. 
+Kemudian kita membuat confusion matrix dan menampilkannya sebagai heatmap dengan menggunakan Seaborn.
+```
 y_pred = knn.predict(X_test)
 
 cnf_matrix = metrics.confusion_matrix(y_test, y_pred)
@@ -196,6 +209,7 @@ plt.ylabel('Actual label')
 plt.xlabel('Predicted label')
 ```
 Kita mencetak laporan klasifikasi yang menyediakan beberapa metrik evaluasi tambahan untuk model klasifikasi
+```
 print(classification_report(y_test,y_pred))
 
 dan di dapat accuracy 0.72
