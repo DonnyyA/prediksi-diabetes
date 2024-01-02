@@ -72,14 +72,14 @@ Kemudian kita tampilkan data top 5
 df.head()
 ```
 ![](1.png)
-```
+
 
 Kemudian kita tampilkan info ringkas data frame
 ```
 df.info()
 ```
 Kemudian kita tampilkan statistik deskriptif ringkas tentang kolom-kolom numerik dalam DataFrame. Statistik yang dihasilkan mencakup count (jumlah data non-null), mean (rata-rata), std (standar deviasi), min (nilai minimum), 25% (kuartil pertama), 50% (median atau kuartil kedua), 75% (kuartil ketiga), dan max (nilai maksimum).
-```
+
 df.describe()
 ```
 Kemudian kita tranposisikan data agar lebih mudah melihat hasil dari statistik nya
