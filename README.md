@@ -124,6 +124,7 @@ plt.show()
 ```
 
 Kemudian kita gunakan bar untuk memvisualisasikan nilai-nilai yang hilang (missing values) dalam suatu DataFrame.
+```
 p=msno.bar(df)
 ```
 
