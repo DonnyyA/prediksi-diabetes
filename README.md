@@ -1,7 +1,7 @@
 # Machine Learning
 ### Nama  : Doni Arafat
-### Nim   : 211351049
-### Kelas : Malam B
+### Occ   : Employee & Software engineer
+
 
 ## Domain Proyek
 Web App yang saya kembangkan ini bisa digunakan oleh siapapun yang membutuhkan. Hasil dari web app ini digunakan untuk mengidentifikasi apakah anda ( Perempuan) mengidap diabtes dengan menganalisa semua simptom-simptom yang sedang anda alami. Setelah mendapatkan hasil sebaiknya anda secepatnya pergi pada seorang profesional untuk diagnosa lebih lanjut dan melakukan pengobatan.
